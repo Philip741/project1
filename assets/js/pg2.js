@@ -26,5 +26,25 @@ function fetchApi (meat, veg, allergy) {
     console.log(meat)
     console.log(veg)
     console.log(allergy) 
-    
+
+}
+
+randomBtn.on('click', function() {
+    requestUrl = "https://www.themealdb.com/api/json/v2/9973533/random.php"
+
+    fetch(requestUrl)
+     .then(function (response) {
+         if(response.ok) {
+             response.json().then(function (data){
+                 saveRandom(data);
+             })
+         } else {
+             return //redirect to a 404 page
+         }
+     })
+
+})
+
+function saveRandom(random) {
+    console.log(random)
 }
