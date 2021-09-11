@@ -1,4 +1,15 @@
+var submitBtn = $('.submit');
+var randomBtn = $('.randomBtn');
+var meatCheckbox = $('.meat-item');
+var vegCheckbox = $('.veggie-item');
+var alergyCheckbox = $('.alergy-item:checked');
 
+
+submitBtn.on('click', function() {
+
+console.log(alergyCheckbox.checked)
+
+})
 
 
 
