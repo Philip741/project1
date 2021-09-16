@@ -60,32 +60,39 @@
     <section class="meat-section border-4 border-green-500 px-10 py-2">
         <h3>Which kind of meat do you prefer</h3>
         <ul class="meat-selection">
-        <li class="meat-item"><input type=checkbox id="chicken">Chicken</input></li>
-        <li class="meat-item"><input type=checkbox id="beef">Beef</input></li>
-        <li class="meat-item"><input type=checkbox id="fish">Fish</input></li>
+        <li class="meat-item"><input type="checkbox" value="chicken" name="meat">Chicken</input></li>
+        <li class="meat-item"><input type="checkbox" value="beef" name="meat">Beef</input></li>
+        <li class="meat-item"><input type="checkbox" value="fish" name="meat">Fish</input></li>
+        <li class="meat-item"><input type="checkbox" value="pork" name="meat">Pork</input></li>
         </ul>
     </section>
     <section class="veggie-section">
         <h3>Which kind of vegetable do you prefer</h3>
         <ul class="veggie-selection">
-        <li class="veggie-item"><input type=checkbox id="kale">Chicken</input></li>
-        <li class="veggie-item"><input type=checkbox id="broccoli">Broccoli</input></li>
-        <li class="veggie-item"><input type=checkbox id="asparagus">Asparagus</input></li>
+        <li class="veggie-item"><input type="checkbox" value="lettuce" name="veggie" >Lettuce</input></li>
+        <li class="veggie-item"><input type="checkbox" value="broccoli" name="veggie" >Broccoli</input></li>
+        <li class="veggie-item"><input type="checkbox" value="asparagus" name="veggie" >Asparagus</input></li>
+        <li class="veggie-item"><input type="checkbox" value="potato" name="veggie" >Potatoes</input></li>
+        <li class="veggie-item"><input type="checkbox" value="corn" name="veggie" >Corn</input></li>
         </ul>
     </section>
     <section class="allergy-section">
         <h3>Which kind of vegetable do you prefer</h3>
         <ul class="allergy-selection">
-        <li class="allergy-item"><input type=checkbox id="nuts">Nuts</input></li>
-        <li class="allergy-item"><input type=checkbox id="lactose">Lactose Intolerance</input></li>
-        <li class="allergy-item"><input type=checkbox id="gluten">Gluten</input></li>
+        <li class="allergy-item"><input type="checkbox" value="milk" name="allergy">Milk</input></li>
+        <li class="allergy-item"><input type="checkbox" value="peanuts" name="allergy">Peanuts</input></li>
+        <li class="allergy-item"><input type="checkbox" value="shellfish" name="allergy">Shellfish</input></li>
+        <li class="allergy-item"><input type="checkbox" value="shellfish" name="allergy">Wheat</input></li>
+        <li class="allergy-item"><input type="checkbox" value="shellfish" name="allegy">Soy</input></li>
         </ul>
     </section>
   </div>
-  <div class="flex flex-col justify-center sm:flex-row mx-auto pt-5 pb-5">
-   <button class="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">Submit</button>
-   <button class="ml-4 inline-flex text-gray-700 bg-gray-200 border-0 py-2 px-6 focus:outline-none hover:bg-gray-300 rounded text-lg">I'm feeling lucky</button>
-  </div>
-   <!-- <script src="./assets/js/script.js"></script> -->
+    <button type="submit" class="submitBtn">Submit</button>
+    <button type="submit" class="randomBtn">I'm feeling lucky</button>
+
+    <footer></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./assets//js/pg2.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
