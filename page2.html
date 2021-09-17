@@ -5,27 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./assets/css/reset.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
     <title>Page 2</title>
   </head>
   <body>
+    <!-- Nav section -->
+    <header class="text-gray-600 body-font">
+      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <img src="assets/project1-logo.png" class="w-12 h-12 text-white p-2 bg-green-500 rounded-full" viewBox="0 0 24 24">
+         <!--   <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-green-500 rounded-full" viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg> -->
+          <span class="ml-3 text-xl">My Recipe Planner
+          </span>
+        </a>
+        <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+          <a class="px-3 py-2 mr-5 rounded hover:text-gray-900 hover:bg-green-400">Main page</a>
+          <a class="px-3 py-2 mr-5 rounded hover:text-gray-900 hover:bg-green-400">Saved recipes</a>
+          <a class="px-3 py-2 mr-5 rounded hover:text-gray-900 hover:bg-green-400">Help</a>
+        </nav>
+        
+      </div>
+    </header>
+    <main>
+      <!-- Main container -->
+    <div class="container mx-auto bg-gray-200">
+    
     <!-- I was thinking a flexbox column here for the buttons and links to the side --> 
-    <nav class="sidebar">
-        <image src="" class="meal-image"></image>
-        <button type="submit" class="btn" id= "homeBtn">Return to home</button>
-        <button type="submit" class="btn" id= "randomBtn">Random recipe</button>
-        <button type="submit" class="btn" id= "factBtn">Food facts</button>
-    </nav>
-    <!-- This will be the large central container -->
-    <div class="main-container">
-        <div class="picure-column">
-            <!--For dynamically added pictures-->
-        </div>
-        <button type="submit" class="btn" id="toggleBtn">Toggle pictures</button>
-    </div>
-    <!-- For the last saved recipes-->
-    <div class="savedContainer"></div>
+    <div class="flex flex-col sm:flex-row gap-5 justify-left mx-auto pb-5 pt-5 ">
+        <nav class="sidebar bg-yellow-200">
+          <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/200">
+            <div>
+            <button type="submit" class="btn" id= "homeBtn">Return to home</button>
+            </div>
+            <div>
+            <button type="submit" class="btn" id= "randomBtn">Random recipe</button>
+            </div>
+            <div>
+            <button type="submit" class="btn" id= "factBtn">Food facts</button>
+            </div>
+        </nav>
+    
+        <!-- This will be the large central container. It is one column consisting of multiple rows -->
+        <div class="flex flex-col main-container  flex-grow">
+            <div class="flex flex-row mb-5">
+                <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/300">
+                <div>
+                <span>Meal 1</span>
+                <p>Text content</p>
+                </div>
+            </div>
+            <div class="flex flex-row mb-5">
+                <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/300">
+                <div>
+                <span>Meal 2</span>
+                <p>Text content</p>
+                </div>
+            </div>
+            <div class="flex flex-row mb-5">
+                <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/300">
+                <div>
+                <span>Meal 3</span>
+                <p>Text content</p>
+                </div>
+            </div>
 
+            </div>
+        </div>
+        <!-- For the last saved recipes-->
+         </div>
     <footer></footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./assets//js/pg2.js"></script>
