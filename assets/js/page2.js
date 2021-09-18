@@ -3,7 +3,7 @@ var mealImage = $("#meal-img")
 var mealName = $(".meal-name")
 var mealInstructions = $(".instructions")
 var youtube = $(".youtube")
-
+var list = $(".ingredients")
 
 var homeButton = $("#homeBtn")
 var randomButton = $("#randomBtn")
@@ -39,9 +39,6 @@ function setAttributes() {
     mealInstructions.html(meal.meals[0].strInstructions)
     youtube.attr("href",meal.meals[0].strYoutube)
     
-    
-    
-    console.log(meal.meals[0].strMeal)
     var ingredients = []
     for (i=1; i<21; i++) {
         var strIngredient = "strIngredient" + i
@@ -49,31 +46,16 @@ function setAttributes() {
         ingredients.push(meal.meals[0][strIngredient])
         ingredients.push(meal.meals[0][strMeasure])
     }
-    // ingredients = ingredients.toString()
-    console.log(ingredients)
-    
-    var filtered = ingredients.filter(Boolean)
-    
-    for(i=0; i<filtered.length; i++) {
-        
+    var ingredientList = []
+    for (i=0; i<ingredients.length; i++) {
+        ingredientList.push(" " + ingredients[i] + ": " + ingredients[i + 1])
+        i = i + 1
     }
-
-
-    console.log(filtered)
-    
-    
-    // var ingredientText = ingredients[0] + ": " + ingredients[1]
-    // console.log(ingredientText)
-
-
+    const filtered = ingredientList.filter((element) => {
+        return element.length > 4;
+    });
+    list.html(filtered.toString())
 }
-
-
-
-
-
-
-
 
 function init() {
     setAttributes();
