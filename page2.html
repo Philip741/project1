@@ -14,9 +14,6 @@
       <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
           <img src="assets/project1-logo.png" class="w-12 h-12 text-white p-2 bg-green-500 rounded-full" viewBox="0 0 24 24">
-         <!--   <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-green-500 rounded-full" viewBox="0 0 24 24">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-          </svg> -->
           <span class="ml-3 text-xl">My Recipe Planner
           </span>
         </a>
@@ -25,35 +22,36 @@
           <a class="px-3 py-2 mr-5 rounded hover:text-gray-900 hover:bg-green-400">Saved recipes</a>
           <a class="px-3 py-2 mr-5 rounded hover:text-gray-900 hover:bg-green-400">Help</a>
         </nav>
-        
       </div>
     </header>
+
     <main>
       <!-- Main container -->
-    <div class="container mx-auto bg-gray-200">
+    <div class="px-5 mx-auto bg-green-700">
     
     <!-- I was thinking a flexbox column here for the buttons and links to the side --> 
-    <div class="flex flex-col sm:flex-row gap-5 justify-left mx-auto pb-5 pt-5 ">
-        <nav class="sidebar bg-yellow-200">
-          <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/200">
+    <div class="flex flex-col sm:flex-row pb-5 pt-5">
+        <nav class="sidebar bg-yellow-50 flex-initial text-center">
+          <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/400">
             <div>
-            <button type="submit" class="btn" id= "homeBtn">Return to home</button>
+            <button type="submit" class="btn mt-5" id="homeBtn">Return to home</button>
             </div>
             <div>
-            <button type="submit" class="btn" id= "randomBtn">Random recipe</button>
+            <button type="submit" class="btn" id="randomBtn">Random recipe</button>
             </div>
             <div>
-            <button type="submit" class="btn" id= "factBtn">Food facts</button>
+            <button type="submit" class="btn" id="factBtn">Food facts</button>
             </div>
         </nav>
     
         <!-- This will be the large central container. It is one column consisting of multiple rows -->
-        <div class="flex flex-col main-container  flex-grow">
-            <div class="flex flex-row mb-5">
+        <div class="ml-10 flex flex-col main-container flex-1">
+            <div class="flex flex-row mb-5 text-center">
                 <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/300">
-                <div>
+                <div class="ml-5 px-5 bg-white">
                 <span>Meal 1</span>
-                <p>Text content</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique harum placeat eligendi odio beatae vitae eaque,
+                   totam nostrum illo modi fugiat, perferendis ut maxime officiis quod odit nihil et architecto.</p>
                 </div>
             </div>
             <div class="flex flex-row mb-5">
@@ -75,6 +73,7 @@
         </div>
         <!-- For the last saved recipes-->
          </div>
+         </main>
     <footer></footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./assets//js/pg2.js"></script>
