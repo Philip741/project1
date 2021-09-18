@@ -1,6 +1,6 @@
 const recipeBtn = document.querySelector("#recipe-btn");
 const homeBtn = document.querySelector("#home-btn");
-var recipeName = document.querySelector("#recipe-name")
+var recipeName = document.querySelector(".recipe-name")
 var calories = document.querySelector("#calories");
 var totalFat = document.querySelector("#fat");
 var carbs = document.querySelector("#carbohydrates");
