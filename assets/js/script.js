@@ -47,15 +47,6 @@ var displayNutrition = function() {
 };
 
 
-submitBtn.on('click', function() {
-
-console.log(alergyCheckbox.checked)
-
-})
-
-
-
-
 // adds event listener and location for the 'Back to Recipe' button
 recipeBtn.addEventListener("click", function () {
     location.href = "page2.html";
