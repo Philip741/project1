@@ -21,6 +21,7 @@ randomButton.on('click', function () {
                     saveRandom(data);
                 })
             } else {
+                alert(`Error: ${response.statusText}`)
                 return //redirect to a 404 page
             }
         })

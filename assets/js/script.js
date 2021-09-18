@@ -1,6 +1,6 @@
 const recipeBtn = document.querySelector("#recipe-btn");
 const homeBtn = document.querySelector("#home-btn");
-var recipeName = document.querySelector("#recipe-name")
+var recipeName = document.querySelector(".recipe-name")
 var calories = document.querySelector("#calories");
 var totalFat = document.querySelector("#fat");
 var carbs = document.querySelector("#carbohydrates");
@@ -45,15 +45,6 @@ var displayNutrition = function() {
     carbs.textContent = data.carbs.value;
     totalFat.textContent = data.fat.value;
 };
-
-
-submitBtn.on('click', function() {
-
-console.log(alergyCheckbox.checked)
-
-})
-
-
 
 
 // adds event listener and location for the 'Back to Recipe' button
