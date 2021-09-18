@@ -47,6 +47,12 @@ var displayNutrition = function() {
 };
 
 
+submitBtn.on('click', function() {
+
+console.log(alergyCheckbox.checked)
+
+})
+
 
 
 
