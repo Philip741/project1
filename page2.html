@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <title>Page 2</title>
   </head>
@@ -31,7 +32,7 @@
     <!-- I was thinking a flexbox column here for the buttons and links to the side --> 
     <div class="flex flex-col sm:flex-row pb-5 pt-5">
         <nav class="sidebar bg-yellow-50 flex-initial text-center">
-          <img class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/400">
+          <img class="object-cover object-center rounded" alt="hero" id = "meal-img" src="https://dummyimage.com/400">
             <div>
             <button type="submit" class="btn bg-yellow-300 mt-5 rounded hover:text-gray-900 hover:bg-green-400 p-2" id="homeBtn">Return to home</button>
             </div>
@@ -47,10 +48,18 @@
         <div class="ml-10 flex flex-col main-container flex-1">
             <div class="flex flex-row mb-5 text-center">
                 <div class="ml-5 px-5 bg-white">
-                <span>Meal 1</span>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique harum placeat eligendi odio beatae vitae eaque,
+                <h2 class="meal-name">Meal 1</h2>
+                <p class="instructions">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique harum placeat eligendi odio beatae vitae eaque,
                    totam nostrum illo modi fugiat, perferendis ut maxime officiis quod odit nihil et architecto.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto modi, alias reprehenderit ab voluptas, numquam deserunt hic praesentium minus illum iure tempora molestiae sequi magnam aperiam vero laborum quasi maiores.</p>
+                <a class="youtube">Link to recipe on youtube</a>  
+                <p>Ingredients</p>
+                <ul class="ingredients">
+                  <li>Ingredient 1</li>
+                  <li>Ingredient 2</li>
+                </ul>
+                
+                
+                <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto modi, alias reprehenderit ab voluptas, numquam deserunt hic praesentium minus illum iure tempora molestiae sequi magnam aperiam vero laborum quasi maiores.</p> -->
                 </div>
             </div>
             
@@ -111,7 +120,7 @@
           </div>
         </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./assets//js/pg2.js"></script>
+    <script src="./assets/js/page2.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
