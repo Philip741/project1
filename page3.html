@@ -5,24 +5,31 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./assets/css/page3.css" />
+        <link rel="stylesheet" href="./assets/css/styles.css" />
         <title>Nutrition Facts</title>
     </head>
 
     <body>
-        <!-- back to recipe button -->
-        <button class="recipe-btn" id="recipe-btn">
-            Back to Recipe
-        </button>
+        <header class="text-gray-600 body-font">
+      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <img src="assets/project1-logo.png" class="w-12 h-12 text-white p-2 bg-green-500 rounded-full" viewBox="0 0 24 24">
+          <span class="ml-3 text-xl">My Recipe Planner
+          </span>
+        </a>
+        <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+          <a class="px-3 py-2 mr-5 rounded hover:text-gray-900 hover:bg-green-400">Back to Recipe</a>
+          <a class="px-3 py-2 mr-5 rounded hover:text-gray-900 hover:bg-green-400">Return to Home</a>
+          <a class="px-3 py-2 mr-5 rounded hover:text-gray-900 hover:bg-green-400">Help</a>
+        </nav>
+      </div>
+    </header>
 
-        <!-- back to home button -->
-        <button class="home-btn" id="home-btn">
-            Return to Home
-        </button>
-
-        <div class="container">
+        <div class="container flex flex-row justify-center mx-auto bg-gray-200">
             <!-- js-provided nutrition facts -->
+            <div class="p-20">
             <div id="nutritionfacts">
-                <table width="242" cellspacing="0" cellpadding="0">
+                <table width="235" cellspacing="0" cellpadding="0">
                   <tbody>
                     <tr>
                       <td align="center" class="header">Nutrition Facts</td>
@@ -211,6 +218,7 @@
                 </table>
               </div>
 
+        </div>
         </div>
         <footer></footer>
         <!-- javascript -->
