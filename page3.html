@@ -4,30 +4,218 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/css/page3.css" />
         <title>Nutrition Facts</title>
     </head>
 
     <body>
+        <!-- back to recipe button -->
+        <button class="recipe-btn" id="recipe-btn">
+            Back to Recipe
+        </button>
+
+        <!-- back to home button -->
+        <button class="home-btn" id="home-btn">
+            Return to Home
+        </button>
+
         <div class="container">
-            <!-- back to recipe button -->
-            <button class="recipe-btn" id="recipe-btn">
-                Back to Recipe
-            </button>
-
-            <!-- back to home button -->
-            <button class="home-btn" id="home-btn">
-                Return to Home
-            </button>
-
             <!-- js-provided nutrition facts -->
-            <div class="nutrition-box" id="nutrition-box">
+            <div id="nutritionfacts">
+                <table width="242" cellspacing="0" cellpadding="0">
+                  <tbody>
+                    <tr>
+                      <td align="center" class="header">Nutrition Facts</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="serving">
+                            Recipe: <span class="recipe-name" id="recipe-name"></span>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr style="height: 7px">
+                      <td bgcolor="#000000"></td>
+                    </tr>
+                    <tr>
+                      <td style="font-size: 7pt">
+                        
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="line">
+                            <div class="label">Calories
+                            </div>
+                            <div class="dv">
+                                <span class="calories" id="calories"> 
+                                </span>
+                            </div>
+                        </div>
+                      </td>
+                    </tr>
+                    
+                    <tr>
+                      <td>
+                        <div class="line">
+                            <div class="label">Total Fat 
+                            </div>
+                            <div class="dv">
+                                <span class="fat" id="fat"> g
+                                </span>
+                            </div>
+                        </div>
+                      </td>
+                    </tr>
 
-            </div>
+                    <tr>
+                      <td class="indent">
+                        <div class="line">
+                            <div class="labellight">Saturated Fat 
+                            </div>
+                            <div class="dv" id="sat-fat">
+                                <span id="sat-fat"> g
+                                </span>
+                            </div>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="indent">
+                        <div class="line">
+                            <div class="labellight"><i>Trans</i> Fat 
+                            </div>
+                            <div class="dv">
+                                <span id="trans-fat"> g
+                                </span>
+                            </div>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="line">
+                          <div class="label">Cholesterol</div> 
+                          <div class="dv">
+                              <span id="cholesterol"> mg</span>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="line">
+                          <div class="label">Sodium
+                          </div>
+                          <div class="dv">
+                              <span id="sodium"> mg</span>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="line">
+                          <div class="label">Total Carbohydrates
+                          </div>
+                          <div class="dv">
+                              <span id="carbohydrates"> g</span>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="indent">
+                        <div class="line">
+                          <div class="labellight">Dietary Fiber
+                          </div>
+                          <div class="dv">
+                              <span id="fiber"> g</span>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="indent">
+                        <div class="line">
+                            <div class="labellight">Sugars 
+                            </div>
+                            <div class="dv">
+                                <span id="sugars"> g</span>
+                            </div>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <div class="line">
+                            <div class="label">Protein 
+                            </div>
+                            <div class="dv">
+                                <span id="protein"> g</span>
+                            </div>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <tr style="height: 7px">
+                      <td bgcolor="#000000"></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <table cellspacing="0" cellpadding="0" border="0" class="vitamins">
+                          <tbody>
+                            <tr>
+                              <td>Vitamin A &nbsp;&nbsp; <span id="vitamin-a"></span> %</td>
+                              <td align="center">•</td>
+                              <td align="right">Calcium &nbsp;&nbsp;
+                                  <span id="calcium"></span> %</td>
+                            </tr>
+                            <tr>
+                              <td>Vitamin B &nbsp;&nbsp; <span id="vitamin-b"></span> %</td>
+                              <td align="center">•</td>
+                              <td align="right">Iron &nbsp;&nbsp; <span id="iron"></span> %</td>
+                            </tr>
+                            <tr>
+                              <td>Vitamin C &nbsp;&nbsp; <span id="vitamin-c"></span> %</td>
+                              <td align="center">•</td>
+                              <td align="right">Potassium &nbsp;&nbsp; <span id="potassium"></span> %</td>
+                            </tr>
+                            <tr>
+                              <td>Vitamin D &nbsp;&nbsp; <span id="vitamin-d"></span> %</td>
+                              <td align="center">•</td>
+                              <td align="right">Folate &nbsp;&nbsp; <span id="folate"></span> %</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    
+                    <tr>
+                      <td>
+                        <div class="line">
+                          <div class="labellight">* Based on a regular <a href="https://www.fns.usda.gov/cnpp/dietary-guidelines-americans" target="_blank">2000 calorie diet</a>
+                            <br><br><i>Nutritional details are an estimate and should only be used as a guide for approximation.</i>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
 
         </div>
 
         <!-- javascript -->
-        <script src="assets/js/score.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="./assets/js/script.js"></script>
 
     </body>
 </html>
