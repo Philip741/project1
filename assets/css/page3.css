@@ -1,19 +1,19 @@
 #nutritionfacts { 
     background-color:white; 
-    border:1px solid black; 
-    padding:3px; width:244px; 
+    border:2px solid black; 
+    padding:6px; width:488px; 
 }
 
 #nutritionfacts td { 
     color:black; 
     font-family:'Arial Black','Helvetica Bold',sans-serif; 
-    font-size:8pt; 
+    font-size:12pt; 
     padding:0; 
 }
 
 #nutritionfacts td.header { 
     font-family:'Arial Black','Helvetica Bold',sans-serif; 
-    font-size:28px; 
+    font-size:36px; 
     white-space:nowrap; 
 }    
 
@@ -24,14 +24,14 @@
 
 #nutritionfacts div.serving { 
     font-family:Arial,Helvetica,sans-serif; 
-    font-size:8pt; 
+    font-size:12pt; 
     text-align:center; 
 }
 
 #nutritionfacts div.weight { 
     display:inline; 
     font-family:Arial,Helvetica,sans-serif; 
-    padding-left:1px; 
+    padding-left:2px; 
 }
 
 #nutritionfacts div.dv { 
@@ -43,11 +43,11 @@
 #nutritionfacts table.vitamins td {  
     font-family:Arial,Helvetica,sans-serif; 
     white-space:nowrap; 
-    width:33%; 
+    width:36%; 
 }
 
 #nutritionfacts div.line { 
-    border-top:1px solid black; 
+    border-top:2px solid black; 
 }
 
 #nutritionfacts div.labellight { 
@@ -56,6 +56,6 @@
 }
 
 #nutritionfacts .highlighted {
-    border:1px dotted grey;
-    padding:2px;
+    border:2px dotted grey;
+    padding:4px;
 }
