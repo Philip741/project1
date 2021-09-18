@@ -42,7 +42,29 @@ function setAttributes() {
     
     
     console.log(meal.meals[0].strMeal)
+    var ingredients = []
+    for (i=1; i<21; i++) {
+        var strIngredient = "strIngredient" + i
+        var strMeasure = "strMeasure" + i
+        ingredients.push(meal.meals[0][strIngredient])
+        ingredients.push(meal.meals[0][strMeasure])
+    }
+    // ingredients = ingredients.toString()
+    console.log(ingredients)
     
+    var filtered = ingredients.filter(Boolean)
+    
+    for(i=0; i<filtered.length; i++) {
+        
+    }
+
+
+    console.log(filtered)
+    
+    
+    // var ingredientText = ingredients[0] + ": " + ingredients[1]
+    // console.log(ingredientText)
+
 
 }
 
@@ -54,7 +76,6 @@ function setAttributes() {
 
 
 function init() {
-    
     setAttributes();
 }
 

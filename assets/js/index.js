@@ -150,8 +150,6 @@ function displayMealInfo(data) {
         ingredients.push(data.meals[0][strIngredient])
         ingredients.push(data.meals[0][strMeasure])
         
-       
-
     }
     console.log(ingredients)
 } 
