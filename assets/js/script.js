@@ -33,6 +33,7 @@ var getNutrition = function(event) {
         return response.json();
     }).then(data =>{
         // evaluates if there is nutrition data and returns to recipe if nutrition data isn't found
+        console.log(data);
         if(data.status === 'error') {
             alert("Couldn't find nutrition data");
             location.href = "page2.html";
