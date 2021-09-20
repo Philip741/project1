@@ -5,11 +5,22 @@ var calories = document.querySelector("#calories");
 var totalFat = document.querySelector("#fat");
 var carbs = document.querySelector("#carbohydrates");
 var protein = document.querySelector("#protein");
+var nutritionArray = [];
 var spoonApiKey = 'ac0a4b145emshfe4704cf11e8436p1c62fejsn125fb00f23c5';
 
+// displays the nutrition information from the spoonacular api
+var displayNutrition = function() {
+    recipeName.textContent = JSON.parse(localStorage.getItem('meal')).meals[0].strMeal;
+    
+    calories.textContent = nutritionArray[0].calories['value'];
+    protein.textContent = nutritionArray[0].protein['value'] + ' g';
+    carbs.textContent = nutritionArray[0].carbs['value'] + ' g';
+    totalFat.textContent = nutritionArray[0].protein['value'] + ' g';
+};
 
 var getNutrition = function(event) {
-    recipeTitle = JSON.parse(localStorage.getItem('mealName'));
+    recipeTitle = JSON.parse(localStorage.getItem('meal')).meals[0].strMeal;
+    console.log('this is meal:', recipeTitle);
     var spoonacularApi = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/guessNutrition?title=${recipeTitle}`;
 
     fetch(spoonacularApi, {
@@ -19,33 +30,21 @@ var getNutrition = function(event) {
 		"x-rapidapi-key": "ac0a4b145emshfe4704cf11e8436p1c62fejsn125fb00f23c5"
 	}})
     .then(response => {
-        console.log(response);
-        if (response.ok) {
-            response.json().then(function(data) {
-                console.log(data);
+        return response.json();
+    }).then(data =>{
+        // evaluates if there is nutrition data and returns to recipe if nutrition data isn't found
+        if(data.status === 'error') {
+            alert("Couldn't find nutrition data");
+            location.href = "page2.html";
 
-                displayNutrition(data);
-            }) 
+        } else {
+            console.log('displays nutrition facts');
+            nutritionArray = [data];
+        
+            displayNutrition(nutritionArray);
         }
-
-    })
-    .catch(err => {
-        console.error(err);
-        alert(`Error: ${response.statusText}`);
     });
 };
-
-var displayNutrition = function() {
-    recipeName = JSON.parse(localStorage.getItem('mealName'))
-        .split(' ')
-        .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-        .join(' ');
-    calories.textContent = data.calories.value;
-    protein.textContent = data.protein.value;
-    carbs.textContent = data.carbs.value;
-    totalFat.textContent = data.fat.value;
-};
-
 
 // adds event listener and location for the 'Back to Recipe' button
 recipeBtn.addEventListener("click", function () {
@@ -57,4 +56,5 @@ homeBtn.addEventListener("click", function () {
     location.href = "index.html";
 });
 
-
+// calls the api
+getNutrition();
