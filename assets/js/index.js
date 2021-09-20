@@ -116,7 +116,7 @@ randomBtn.on('click', function () {
 function saveRandom(random) {
     console.log(random)
     localStorage.setItem("meal", JSON.stringify(random))
-    displayMealInfo(random)
+    window.location.href = "page2.html"
 }
 
 function saveChoice(choice) {
@@ -126,30 +126,5 @@ function saveChoice(choice) {
     } else {
         localStorage.setItem("meal", JSON.stringify(choice))
         window.location.href = "page2.html"
-        // displayMealInfo(choice)
     }
 }
-
-function displayMealInfo(data) {
-    console.log(data)
-
-    var mealName = data.meals[0].strMeal
-    var mealImg = data.meals[0].strMealThumb
-    var mealInstructions = data.meals[0].strInstructions
-    var youtube = data.meals[0].strYoutube
-    var ingredients = []
-    var meals = data.meals[0]
-    
-
-
-    for (i=1; i<21; i++) {
-        var strIngredient = "strIngredient" + i
-        var strMeasure = "strMeasure" + i
-        console.log(strIngredient)
-        console.log(data.meals[0][strIngredient])
-        ingredients.push(data.meals[0][strIngredient])
-        ingredients.push(data.meals[0][strMeasure])
-        
-    }
-    console.log(ingredients)
-} 
