@@ -98,36 +98,78 @@ function storePrior() {
     populateSaved();
 }
 
+
+var img1 = $("#save1")
+var img2 = $("#save2")
+var img3 = $("#save3")
+var img4 = $("#save4")
+
+
 function populateSaved() {
     var toPopulate = JSON.parse(localStorage.getItem("saved"))
     
-    console.log(toPopulate)
-    var img1 = $("#save1")
-    var img2 = $("#save2")
-    var img3 = $("#save3")
-    var img4 = $("#save4")
-
-    img1.attr("src", toPopulate[0].mealPic)
-
+    img1.css("background-image", "url(" + toPopulate[0].mealPic + ")")
+    img1.attr("name","'" +  toPopulate[0].mealId + "'")
     if (toPopulate.length === 2) {
         img2.attr("src", toPopulate[1].mealPic)
     } else if (toPopulate.length === 3) {
-        img2.attr("src", toPopulate[1].mealPic)
-        img3.attr("src", toPopulate[2].mealPic)
+        img2.css("background-image", "url(" + toPopulate[1].mealPic + ")")
+        img3.css("background-image", "url(" + toPopulate[2].mealPic + ")")
     } else {
-        img2.attr("src", toPopulate[1].mealPic)
-        img3.attr("src", toPopulate[2].mealPic)
-        img4.attr("src", toPopulate[3].mealPic)
+        
+        img2.css("background-image", "url(" + toPopulate[1].mealPic + ")")
+        img3.css("background-image", "url(" + toPopulate[2].mealPic + ")")
+        img4.css("background-image", "url(" + toPopulate[3].mealPic + ")")
     }
-    
+}
+
+img1.on("click", function () {
+    var toPopulate = JSON.parse(localStorage.getItem("saved"))
+    searchItem = toPopulate[0].mealId
+    loadLast(searchItem)
+
+})
+
+img2.on("click", function () {
+    var toPopulate = JSON.parse(localStorage.getItem("saved"))
+    searchItem = toPopulate[1].mealId
+    loadLast(searchItem)
+})
+
+img3.on("click", function () {
+    var toPopulate = JSON.parse(localStorage.getItem("saved"))
+    searchItem = toPopulate[2].mealId
+    loadLast(searchItem)
+})
+
+img4.on("click", function () {
+    var toPopulate = JSON.parse(localStorage.getItem("saved"))
+    searchItem = toPopulate[3].mealId
+    loadLast(searchItem)
+})
+
+function loadLast (data) {
+    requestUrl = "https://www.themealdb.com/api/json/v2/9973533/lookup.php?i=" + data
+    fetch(requestUrl)
+        .then(function (response) {
+            if (response.ok) {
+                response.json().then(function (data) {
+                    saveRandom(data);
+                })
+            } else {
+                return //redirect to a 404 page
+            }
+        })
+
 
 }
 
 
-
-
-
-
-
-
 init();
+
+
+
+
+// img2.attr("src", toPopulate[1].mealPic)
+// img3.attr("src", toPopulate[2].mealPic)
+// img4.attr("background", toPopulate[3].mealPic)
