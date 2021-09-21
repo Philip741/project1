@@ -5,7 +5,6 @@ var youtube = $(".youtube")
 var list = $(".ingredients")
 var homeButton = $("#homeBtn")
 var randomButton = $("#randomBtn")
-
 var savedMeals = []
 var img1 = $("#save1")
 var img2 = $("#save2")
@@ -13,37 +12,8 @@ var img3 = $("#save3")
 var img4 = $("#save4")
 
 homeButton.on("click", function () {
-
-var homeButtonMobile = $("#homeBtnMobile")
-var randomMobile = $("#randomBtnMobile")
-
-
-homeButton.on("click", function() {
-
     window.location.href = "index.html"
 })
-
-homeButtonMobile.on("click", function() {
-    window.location.href = "index.html"
-})
-
-randomMobile.on("click", function () {
-    requestUrl = "https://www.themealdb.com/api/json/v2/9973533/random.php"
-
-    fetch(requestUrl)
-        .then(function (response) {
-            if (response.ok) {
-                response.json().then(function (data) {
-                    saveRandom(data);
-                })
-            } else {
-                alert(`Error: ${response.statusText}`)
-                return //redirect to a 404 page
-            }
-        })
-
-})
-
 
 randomButton.on('click', function () {
     requestUrl = "https://www.themealdb.com/api/json/v2/9973533/random.php"
@@ -62,7 +32,6 @@ randomButton.on('click', function () {
         })
 
 })
-
 
 function saveRandom(random) {
     localStorage.setItem("meal", JSON.stringify(random))
