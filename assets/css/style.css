@@ -10,3 +10,11 @@
 .youtube{
     color: red;
 }
+
+#save1, #save2, #save3, #save4 {
+    height: 300px;
+    width: 300px;
+    background-size: 300px;
+    cursor: pointer;
+    
+}
