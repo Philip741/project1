@@ -80,7 +80,6 @@ function savePrior() {
         })
         storePrior();
     } else if (savedMeals.length < 4) {
-        console.log("hello")
         savedMeals.unshift({
             mealPic, mealId
         })
