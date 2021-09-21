@@ -39,7 +39,7 @@ function setAttributes() {
     mealName.html(meal.meals[0].strMeal)
     mealInstructions.html(meal.meals[0].strInstructions)
     youtube.attr("href",meal.meals[0].strYoutube)
-    
+    console.log(meal)
     var ingredients = []
     for (i=1; i<21; i++) {
         var strIngredient = "strIngredient" + i
