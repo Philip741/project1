@@ -45,6 +45,7 @@ randomButton.on('click', function () {
             if (response.ok) {
                 response.json().then(function (data) {
                     saveRandom(data);
+                    savePrior();
                 })
             } else {
                 alert(`Error: ${response.statusText}`)
@@ -87,6 +88,73 @@ function setAttributes() {
 
 function init() {
     setAttributes();
+    savePrior();
 }
+
+var savedMeals = []
+
+function savePrior() {
+    var meal = JSON.parse(localStorage.getItem("meal"))
+    var mealPic = meal.meals[0].strMealThumb
+    var mealId = meal.meals[0].idMeal
+    savedMeals = JSON.parse(localStorage.getItem("saved"))
+    if (savedMeals === null) {
+        savedMeals = []
+        savedMeals.push({
+            mealPic, mealId
+        })
+        storePrior();
+    } else if (savedMeals.length < 5) {
+        console.log("hello")
+        savedMeals.unshift({
+            mealPic, mealId
+        })
+        storePrior();
+    } else {
+        savedMeals.shift()
+        savedMeals.push({
+            mealPic, mealId
+        })
+        
+        storePrior();
+    }
+}
+
+function storePrior() {
+    localStorage.setItem("saved", JSON.stringify(savedMeals))
+    populateSaved();
+}
+
+function populateSaved() {
+    var toPopulate = JSON.parse(localStorage.getItem("saved"))
+    
+    console.log(toPopulate)
+    var img1 = $("#save1")
+    var img2 = $("#save2")
+    var img3 = $("#save3")
+    var img4 = $("#save4")
+
+    img1.attr("src", toPopulate[0].mealPic)
+
+    if (toPopulate.length === 2) {
+        img2.attr("src", toPopulate[1].mealPic)
+    } else if (toPopulate.length === 3) {
+        img2.attr("src", toPopulate[1].mealPic)
+        img3.attr("src", toPopulate[2].mealPic)
+    } else {
+        img2.attr("src", toPopulate[1].mealPic)
+        img3.attr("src", toPopulate[2].mealPic)
+        img4.attr("src", toPopulate[3].mealPic)
+    }
+    
+
+}
+
+
+
+
+
+
+
 
 init();
