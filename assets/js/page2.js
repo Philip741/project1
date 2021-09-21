@@ -19,6 +19,7 @@ randomButton.on('click', function () {
             if (response.ok) {
                 response.json().then(function (data) {
                     saveRandom(data);
+                    savePrior();
                 })
             } else {
                 alert(`Error: ${response.statusText}`)
@@ -60,6 +61,60 @@ function setAttributes() {
 
 function init() {
     setAttributes();
+    savePrior();
 }
+
+var savedMeals = []
+
+function savePrior() {
+    // var saved = JSON.parse(localStorage.getItem("saved"))
+    // console.log(saved)
+
+    var meal = JSON.parse(localStorage.getItem("meal"))
+    console.log(meal)
+    var mealPic = meal.meals[0].strMealThumb
+    var mealId = meal.meals[0].idMeal
+
+    savedMeals = JSON.parse(localStorage.getItem("saved"))
+    if (savedMeals === null) {
+        savedMeals = []
+        savedMeals.push({
+            mealPic, mealId
+        })
+        storePrior();
+    } else {
+        savedMeals.push({
+            mealPic, mealId
+        })
+        storePrior();
+    }
+
+    // var history = localStorage.getItem("saved",JSON.stringify(savedMeals))
+
+    // if (history === null) {
+    //     localStorage.setItem("saved",JSON.stringify(savedMeals))
+    
+
+    console.log(savedMeals)
+
+}
+
+function storePrior() {
+    localStorage.setItem("saved", JSON.stringify(savedMeals))
+}
+
+function populateSaved() {
+
+
+
+
+}
+
+
+
+
+
+
+
 
 init();
