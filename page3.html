@@ -27,13 +27,23 @@
         
         <div class="container flex flex-row justify-center mx-auto bg-green-100">
             <!-- js-provided nutrition facts -->
+            <div id="error-modal" class="modal">
+
+              <!-- Modal content -->
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>No Nutrition Information Found</p>
+                <button class="error-button"><a href="page2.html">Return to Recipe</a></button>
+              </div>
             
+            </div>
+
             <div class="p-20">
               <div class="text-center pb-5">
               <h1><span class="text-4xl mb-5 recipe-name"></span></h1>
               </div>
             <div id="nutritionfacts">
-                <table width="235" cellspacing="0" cellpadding="0">
+                <table width="470" cellspacing="0" cellpadding="0">
                   <tbody>
                     <tr>
                       <td align="center" class="header">Nutrition Facts</td>
